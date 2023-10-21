@@ -129,9 +129,9 @@ SCRIPT
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-
+  ENV['VAGRANT_DEFAULT_PROVIDER'] = 'virtualbox'
   config.vm.box = "ubuntu/focal64"
-
+``
   config.vm.provider :virtualbox do |vb|
     vb.name = "mastodon"
     vb.customize ["modifyvm", :id, "--memory", "8192"]
